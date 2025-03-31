@@ -1,6 +1,10 @@
 var buttonRock = document.getElementById('button-rock');
 var buttonPaper = document.getElementById('button-paper');
 var buttonScissors = document.getElementById('button-scissors');
+var resultDisplay = document.getElementById('result');
+
+var playerWins = 0;
+var computerWins = 0;
 
 function getMoveName(moveId) {
     if (moveId == 1) {
@@ -21,11 +25,18 @@ function displayResult(playerMove, computerMove) {
         (playerMove === 'nożyce' && computerMove === 'papier')
     ) {
         printMessage('Wygrywasz!');
+        playerWins++;
     } else if (playerMove === computerMove) {
         printMessage('Remis!');
     } else {
         printMessage('Przegrywasz!');
+        computerWins++;
     }
+    updateScore();
+}
+
+function updateScore() {
+    resultDisplay.innerText = playerWins + ' - ' + computerWins;
 }
 
 function buttonClicked(argButtonName) {
