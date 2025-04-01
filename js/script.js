@@ -1,10 +1,10 @@
-var buttonRock = document.getElementById('button-rock');
-var buttonPaper = document.getElementById('button-paper');
-var buttonScissors = document.getElementById('button-scissors');
-var resultDisplay = document.getElementById('result');
+const buttonRock = document.getElementById('button-rock');
+const buttonPaper = document.getElementById('button-paper');
+const buttonScissors = document.getElementById('button-scissors');
+const resultDisplay = document.getElementById('result');
 
-var playerWins = 0;
-var computerWins = 0;
+let playerWins = 0;
+let computerWins = 0;
 
 function getMoveName(moveId) {
     if (moveId == 1) {
@@ -43,11 +43,11 @@ function buttonClicked(argButtonName) {
     clearMessages();
     console.log(argButtonName + ' został kliknięty');
 
-    var randomNumber = Math.floor(Math.random() * 3 + 1);
-    var computerMove = getMoveName(randomNumber);
+    let randomNumber = Math.floor(Math.random() * 3 + 1);
+    let computerMove = getMoveName(randomNumber);
     printMessage('Mój ruch: ' + computerMove);
 
-    var playerMove = argButtonName;
+    let playerMove = argButtonName;
     printMessage('Twój ruch: ' + playerMove);
 
     displayResult(playerMove, computerMove);
